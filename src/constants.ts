@@ -150,6 +150,7 @@ export enum ChatModels {
   GEMINI_FLASH = "gemini-2.5-flash",
   GEMINI_FLASH_LITE = "gemini-2.5-flash-lite",
   CLAUDE_4_SONNET = "claude-sonnet-4-20250514",
+  CLAUDE_4_OPUS = "claude-opus-4-5-20251101",
   GROK_4_FAST = "grok-4-fast",
   GROQ_LLAMA_8b = "llama3-8b-8192",
   COMMAND_R = "command-r",
@@ -308,6 +309,13 @@ export const BUILTIN_CHAT_MODELS: CustomModel[] = [
   },
   {
     name: ChatModels.CLAUDE_4_SONNET,
+    provider: ChatModelProviders.ANTHROPIC,
+    enabled: true,
+    isBuiltIn: true,
+    capabilities: [ModelCapability.VISION, ModelCapability.REASONING],
+  },
+  {
+    name: ChatModels.CLAUDE_4_OPUS,
     provider: ChatModelProviders.ANTHROPIC,
     enabled: true,
     isBuiltIn: true,

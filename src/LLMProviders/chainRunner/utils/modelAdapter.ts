@@ -466,7 +466,7 @@ CRITICAL: The diff parameter MUST contain the SEARCH/REPLACE blocks wrapped in t
  */
 class ClaudeModelAdapter extends BaseModelAdapter {
   /**
-   * Check if this is a Claude thinking model (3.7 Sonnet or Claude 4)
+   * Check if this is a Claude thinking model (3.7 Sonnet, Claude 4, or Opus 4.5)
    * @returns True if the model supports thinking/reasoning modes
    */
   private isThinkingModel(): boolean {
@@ -474,7 +474,9 @@ class ClaudeModelAdapter extends BaseModelAdapter {
       this.modelName.includes("claude-3-7-sonnet") ||
       this.modelName.includes("claude-sonnet-4") ||
       this.modelName.includes("claude-3.7-sonnet") ||
-      this.modelName.includes("claude-4-sonnet")
+      this.modelName.includes("claude-4-sonnet") ||
+      this.modelName.includes("claude-opus-4") ||
+      this.modelName.includes("claude-4-opus")
     );
   }
 
